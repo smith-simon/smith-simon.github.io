@@ -78,3 +78,8 @@ An "index.html" file is the primary entry point for a web browser to display the
 Enter the repository, commit your changes, and press the publish button to send your index.html file back to GitHub …and you're done! Fire up a browser and go to https://username.github.io
 
 ![commit and publish](https://pages.github.com/images/desktop-demo@2x.gif){:width="600px"}
+
+And that's the most simple version of our website. So how do we go from something basic looking to a clean professional look? We'll cover this and how to add functionality to your blog below.
+
+## Styling and functionality
+To build up our blog with functionality like menus, buttons, search etc. and styling like font and color 
