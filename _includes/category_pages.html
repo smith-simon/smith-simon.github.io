@@ -1,0 +1,102 @@
+<!-- =======================
+Inner intro START -->
+<section class="pt-4">
+	<div class="container">
+		<div class="row">
+      <div class="col-12">
+				<div class="bg-{{ page.topiccolor }} bg-opacity-10 text-center rounded-3 p-4"> 
+					<h1 class="text-{{ page.topiccolor }}">{{ page.topic }}</h1>
+					<nav class="d-flex justify-content-center" aria-label="breadcrumb">
+						<ol class="breadcrumb breadcrumb-dots mb-0">
+							<li class="breadcrumb-item"><a href="./"><i class="bi bi-house me-1"></i> Home</a></li>
+							<li class="breadcrumb-item active">All post</li>
+						</ol>
+					</nav>
+				</div>
+      </div>
+    </div>
+	</div>
+</section>
+<!-- =======================
+Inner intro END -->
+
+<!-- =======================
+Search Results START -->
+<section class="pt-4 pb-0">
+    <div class="container">
+        <div id="{{ page.resultsid }}" class="row">
+            <!-- Search results will be inserted here -->
+        </div>
+    </div>
+</section>
+<!-- =======================
+Search Results END -->
+
+
+<script>
+    const searchQuery = '{{ page.topic | escape }}';
+    
+    const posts = [
+        {% for post in site.posts %}
+        {
+            "title": "{{ post.title | escape }}",
+            "date": "{{ post.date | escape }}",
+            "category": "{{ post.category | escape }}",
+            "tags": "{{ post.tags | escape }}",
+            "excerpt": "{{ post.excerpt | escape }}",
+            "author": "{{ post.author | escape }}",
+            "authorimg": "{{ post.authorimg | escape }}",
+            "readtime": "{{ post.readtime | escape }}",
+            "previewimg": "{{ post.previewimg | escape }}",
+            "url": "{{ post.url | relative_url }}",
+            "content": "{{ post.content | strip_html | strip_newlines | escape }}"
+        },
+        {% endfor %}
+    ];
+    
+    const searchResults = [];
+    
+    posts.forEach(post => {
+        if (post.category.toLowerCase().includes(searchQuery.toLowerCase())) {
+            searchResults.push(post);
+        }
+    });
+    
+    const resultsContainer = document.getElementById('{{ page.resultsid | escape }}');
+
+    if (searchResults.length > 0) {
+    searchResults.forEach(result => {
+        // Format the date as "Month Year"
+        const dateParts = result.date.split('-');
+        const year = dateParts[0];
+        const month = dateParts[1];
+        const formattedDate = new Date(`${month}-1-${year}`).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+        const resultCard = `
+			<!-- Card item START -->
+				<div class="col-sm-6 col-lg-3">
+					<div class="card mb-4">
+						<!-- Card img -->
+						<div class="card-fold position-relative">
+							<img class="card-img" src="${result.previewimg}" alt="Card image">
+						</div>
+						<div class="card-body px-0 pt-3">
+							<h4 class="card-title"><a href="${result.url}" class="btn-link text-reset stretched-link fw-bold">${result.title}</a></h4>
+							<!-- Card info -->
+							<ul class="nav nav-divider align-items-center text-uppercase small">
+								<!-- <li class="nav-item">
+									<a class="nav-link text-reset">${result.author}</a>
+								</li> -->
+								<li class="nav-item">${formattedDate}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			<!-- Card item END -->
+        `;
+
+        resultsContainer.innerHTML += resultCard;
+    });
+    } else {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+    }
+    </script>

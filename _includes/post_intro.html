@@ -1,0 +1,61 @@
+<!-- =======================
+Inner intro START -->
+<section class="bg-dark-overlay-4" style="background-image:url('{{ page.backgroundimg }}'); background-position: center left; background-size: cover;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 py-md-5 my-lg-5">
+        <a href="{{ page.categoryurl }}" class="badge text-bg-{{ page.categorycolor }} mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>{{ page.category }}</a>
+				<h1 class="text-white">{{ page.title }}</h1>
+        <p class="lead text-white">{{ page.excerpt }}</p>
+        <!-- Info -->
+        <ul class="nav nav-divider text-white-force align-items-center">
+          <li class="nav-item">
+            <div class="nav-link">
+              <div class="d-flex align-items-center text-white position-relative">
+                <div class="avatar avatar-sm">
+                  <img class="avatar-img rounded-circle" src="{{ page.authorimg }}" alt="avatar">
+                </div>
+                <span class="ms-3">by <a class="stretched-link text-reset">{{ page.author }}</a></span>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">{{ page.date | date: "%B %Y"}}</li>
+          <li class="nav-item">{{ page.readtime }}</li>
+        </ul>
+        <!-- Share post -->
+        <div class="d-md-flex align-items-center mt-4">
+          <h5 class="text-white me-3">Share on: </h5>
+					<ul class="nav text-white-force">
+						<li class="nav-item">
+							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://playbooktolife.com{{ page.url }}">
+								<i class="fab fa-facebook-square align-middle"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-twitter" href="https://twitter.com/intent/tweet?url=https://playbooktolife.com{{ page.url }}&text={{ page.title }}">
+								<i class="fab fa-twitter-square align-middle"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://playbooktolife.com{{ page.url }}&title={{ page.title }}">
+								<i class="fab fa-linkedin align-middle"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-pinterest" href="https://pinterest.com/pin/create/button/?url=https://playbooktolife.com{{ page.url }}&media=https://playbooktolife.com{{ page.previewimg }}&description={{ page.title }}">
+								<i class="fab fa-pinterest align-middle"></i>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link icon-md rounded-circle me-2 mb-2 p-0 fs-5 bg-primary" href="mailto:?subject=Check out this blog post&body=I thought you might be interested in this blog post:https://playbooktolife.com{{ page.url }}">
+								<i class="far fa-envelope align-middle"></i>
+							</a>
+						</li>
+					</ul>
+        </div>
+      </div>
+    </div>
+	</div>
+</section>
+<!-- =======================
+Inner intro END -->

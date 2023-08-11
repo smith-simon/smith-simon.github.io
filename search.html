@@ -1,0 +1,105 @@
+---
+layout: default
+title: Search Results - PBTL
+permalink: /search
+---
+
+<!-- =======================
+Inner intro START -->
+<section class="pt-4">
+    <div class="container">
+        <h1 id="search-query-title">Search Results</h1>
+        <div id="search-results" class="mt-4">
+            <!-- Search results will be inserted here -->
+        </div>
+    </div>
+</section>
+<!-- =======================
+Inner intro END -->
+
+<script>
+    const searchQuery = new URLSearchParams(window.location.search).get('q');
+    
+    const posts = [
+        {% for post in site.posts %}
+        {
+            "title": "{{ post.title | escape }}",
+            "date": "{{ post.date | escape }}",
+            "category": "{{ post.category | escape }}",
+            "categoryurl": "{{ post.categoryurl | escape }}",
+            "categorycolor": "{{ post.categorycolor | escape }}",
+            "tags": "{{ post.tags | escape }}",
+            "excerpt": "{{ post.excerpt | escape }}",
+            "author": "{{ post.author | escape }}",
+            "authorimg": "{{ post.authorimg | escape }}",
+            "readtime": "{{ post.readtime | escape }}",
+            "previewimg": "{{ post.previewimg | escape }}",
+            "url": "{{ post.url | relative_url }}",
+            "content": "{{ post.content | strip_html | strip_newlines | escape }}"
+        },
+        {% endfor %}
+    ];
+    
+    const searchResults = [];
+    
+    posts.forEach(post => {
+        if (post.title.toLowerCase().includes(searchQuery.toLowerCase()) || post.content.toLowerCase().includes(searchQuery.toLowerCase())) {
+            searchResults.push(post);
+        }
+    });
+    
+    const resultsContainer = document.getElementById('search-results');
+
+    if (searchResults.length > 0) {
+    searchResults.forEach(result => {
+        // Update the h1 element to include the search query
+        document.getElementById('search-query-title').textContent = `Search Results for "${searchQuery}"`;
+        // Format the date as "Month Year"
+        const dateParts = result.date.split('-');
+        const year = dateParts[0];
+        const month = dateParts[1];
+        const formattedDate = new Date(`${month}-1-${year}`).toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+        const resultCard = `
+            <!-- Card item START -->
+            <div class="card border rounded-3 up-hover p-4 mb-4">
+                <div class="row g-3">
+                    <div class="col-lg-5">
+                        <!-- Categories -->
+							<a href="${result.categoryurl}" class="badge text-bg-${result.categorycolor} mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>${result.category}</a>
+                        <!-- Title -->
+                        <h2 class="card-title">
+                            <a href="${result.url}" class="btn-link text-reset stretched-link">${result.title}</a>
+                        </h2>
+                        <!-- Author info -->
+                        <div class="d-flex align-items-center position-relative mt-3">
+                            <div class="avatar me-2">
+                                <img class="avatar-img rounded-circle" src="${result.authorimg}" alt="avatar">
+                            </div>
+                            <div>
+                                <h5 class="mb-1"><a class="stretched-link text-reset">${result.author}</a></h5>
+                                <ul class="nav align-items-center small">
+                                    <li class="nav-item me-3">${formattedDate}</li>
+                                    <li class="nav-item"><i class="far fa-clock me-1"></i>${result.readtime}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Detail -->
+                    <div class="col-md-6 col-lg-4">
+                        <p>${result.excerpt}..</p>
+                    </div>
+                    <!-- Image -->
+                    <div class="col-md-6 col-lg-3">
+                        <img class="rounded-3" src="${result.previewimg}" alt="Card image">
+                    </div>
+                </div>
+            </div>
+            <!-- Card item END -->
+        `;
+
+        resultsContainer.innerHTML += resultCard;
+    });
+    } else {
+        resultsContainer.innerHTML = '<p>No results found.</p>';
+    }
+    </script>
