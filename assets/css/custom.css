@@ -3,3 +3,7 @@ blockquote {
     padding-top: 1rem;
     background-color: var(--bs-tertiary-bg);
   }
+
+.highlight {
+    background-color: var(--bs-tertiary-bg);
+}

@@ -19,6 +19,7 @@ featured: False
 ---
 
 ## Getting started
+
 In order to successfully make it through this guide, a very basic level of coding knowledge is recommended. Alternatively, if you are willing to learn on the go that's also fine! If you have some familarity with excel formulas, visual basic, html or other languages it will be smooth sailing. You can always use AI services like [ChatGPT](https://chat.openai.com/) to assist you.
 
 If you have never seen a line of code in your life and are absolutely not interested, then you might be out of luck for the zero cost blog. In this case, I'd recommend using one of the services below to begin your blogging journey (albiet at a slightly higher price point).
@@ -34,7 +35,9 @@ If you have never seen a line of code in your life and are absolutely not intere
 All up, getting through this guide and setting up a simple blog website should take about 30-60 minutes.
 
 ## Workflow tools
+
 #### GitHub
+
 Head over to [GitHub](https://github.com/) and sign up. GitHub is a web-based platform for version control and collaborative software development. It's what we are going to use to manage and deploy our blog website. Also download and install [Github Desktop](https://desktop.github.com/). This will allow us to easily manage version control locally on our computer.
 
 #### Visual Studio Code
@@ -58,9 +61,20 @@ This is so we can make changes to our blog in our chosen code editor (Visual Stu
 ![set up in desktop](https://pages.github.com/images/setup-in-desktop@2x.png){:width="600px"}
 
 #### Create an index file
-An "index.html" file is the primary entry point for a web browser to display the content of a website, written in HTML (Hypertext Markup Language).
+
+An "index.html" file is the primary entry point for a web browser to display the content of a website, written in HTML (Hypertext Markup Language). From GitHub Desktop click on **"Open in Visual Studio Code**". From here create a new file in the repository called "index.html" and copy in the follow code as an example. Save the file.
+
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <h1>Hello World</h1>
+    <p>I'm hosted with GitHub Pages.</p>
+    </body>
+    </html>
+
+![visual studio code create index file](./assets/images/posts/screensnips/visual-studio-index-file.png){:width="800px"}
 
 #### Commit and publish
-![commit and publish](https://pages.github.com/images/desktop-demo@2x.gif){:width="600px"}
+Enter the repository, commit your changes, and press the publish button to send your index.html file back to GitHub …and you're done! Fire up a browser and go to https://username.github.io
 
-![visual studio code create new file](./assets/images/posts/screensnips/visual-studio-new-file.png){:width="600px"}
+![commit and publish](https://pages.github.com/images/desktop-demo@2x.gif){:width="600px"}
