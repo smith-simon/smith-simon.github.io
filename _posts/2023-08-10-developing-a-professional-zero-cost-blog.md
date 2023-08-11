@@ -82,4 +82,50 @@ Enter the repository, commit your changes, and press the publish button to send 
 And that's the most simple version of our website. So how do we go from something basic looking to a clean professional look? We'll cover this and how to add functionality to your blog below.
 
 ## Styling and functionality
-To build up our blog with functionality like menus, buttons, search etc. and styling like font and color 
+
+#### Templates
+
+To build up our blog with functionality and styling I suggest starting with a template. We could go and start coding all the styling ourself, and it's a good idea to try this sometime to get a basic idea of the HTML syntax. Starting with a template will also help you to ensure you website looks suitable on mobile devices.
+
+You can get a nice clean free blog template from [startbootstrap](https://startbootstrap.com/theme/clean-blog-jekyll). You can find the [source code](https://github.com/startbootstrap/startbootstrap-clean-blog-jekyll) and additional instructions on GitHub. Download this template and copy paste the entire contents into your repository.
+
+![simple-blog-template](https://assets.startbootstrap.com/img/screenshots/themes/clean-blog-jekyll.png){:width="800px"}
+
+If you want something a bit fancier you can browse other websites or purchase a professionally designed HTML template. If you want to go down this path (which can save you a lot of time) I would recommend to look at [Bootstrap Themes](https://themes.getbootstrap.com/).
+
+Reading up a little on the below will help you to best modify your blog.
+
+#### Jekyll
+By default GitHub pages uses [Jekyll](https://jekyllrb.com/) to serve your website content. Jekyll is a static site generator, commonly used for creating simple, fast, and secure websites. It takes plain text content and transforms it into static HTML pages, making it easy to manage and host websites without the need for a complex content management system (CMS) or a dynamic server. It's popular among developers and bloggers for its simplicity and efficiency.
+
+
+#### Bootstrap
+[Bootstrap](https://getbootstrap.com/) is a widely used front-end framework for building responsive and visually appealing websites and web applications. It provides a set of pre-designed HTML, CSS, and JavaScript components that help developers create consistent, mobile-friendly user interfaces. Bootstrap simplifies the process of designing and structuring web content, making it a popular choice for developers seeking to streamline the development of modern and responsive websites.
+
+#### Markdown
+Markdown is a lightweight markup language that simplifies the formatting of plain text content. It's commonly used for writing documentation, web content, and even simple formatted notes. Markdown uses simple and intuitive syntax (such as using asterisks for emphasis, hashtags for headings, and square brackets for links) to indicate formatting elements like headings, lists, links, and more. It's widely supported on various platforms, making it a popular choice for creating structured yet easy-to-read documents. Read the style guide [here](https://www.markdownguide.org/).
+
+You don't need to be an expert in any of these, but knowing roughly what they do will allow you to edit and tinker with your website as needed to achieve the results you want.
+
+## Installing Jekyll and previewing your website locally
+This can sometimes be a bit tricky but if you perservere this will be the final hurdle. Follow the [install instructions](https://jekyllrb.com/docs/) on the Jekyll website depending on your operating system.
+
+Once you have installed Jekyll, from your repository in Visual Studio Code, open a new terminal. "Terminal" -> "New Terminal". Try either one of the following to start the local web server.
+
+    $ jekyll serve
+
+    $ gem exec jekyll serve
+
+If this suceeds then head to **http://127.0.0.1:4000** to preview your website locally.
+
+## Recommendations
+A few tips and tricks that I would recommend. Learn how to use the following Jekyll tools (ask ChatGPT to explain each one)
+
+1. includes
+2. layouts
+3. posts
+
+By using includes and layouts this will let you author your posts in markdown (.md) which you can preview the formatted version in Visual Studio Code as you author your posts.
+
+## Conclusions
+That covers the basic framework for your blog. We won't go into all the details on how to edit every component of the blog, please use all the links provided above and AI to assist you with this. Don't feel intimated if this all feels too foreign, the learning curve is pretty past and if you stick at it for a day or two you will be well on your way.

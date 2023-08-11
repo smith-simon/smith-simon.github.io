@@ -18,4 +18,6 @@ flagship: False
 featured: True
 ---
 
-This is the main blog post content
+## Moises.ai
+
+I recently discovered a handy free website called [moises.ai](https://moises.ai). It's a web-based platform that leverages advanced machine learning algorithms to analyze and manipulate audio files. Its intuitive interface and powerful tools make it an invaluable asset for anyone looking to enhance, remix, or isolate elements within their audio recordings. Whether you're a musician seeking to isolate vocals from a track, a podcaster aiming to remove background noise, or a filmmaker looking to score your work with custom music. Check it out with the link above.
