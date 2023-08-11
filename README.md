@@ -1,2 +1,2 @@
-# pbtl
-Repository for the Playbook to Life blog.
+# Playbook to Life
+This is the repository for the Playbook to Life blog.
