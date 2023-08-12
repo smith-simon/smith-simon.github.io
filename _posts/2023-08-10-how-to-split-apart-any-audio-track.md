@@ -1,6 +1,6 @@
 ---
 layout: markdown-page
-title: How to Split Apart Any Audio Track
+title: How to split apart any audio track
 permalink: /how_to_split_apart_any_audio_track
 published: True
 date: 2023-08-10

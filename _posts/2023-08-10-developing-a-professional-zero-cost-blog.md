@@ -1,6 +1,6 @@
 ---
 layout: markdown-page
-title: Developing a Professional Zero Cost Blog
+title: Developing a professional zero cost blog
 permalink: /developing_a_professional_zero_cost_blog
 published: True
 date: 2023-08-10
